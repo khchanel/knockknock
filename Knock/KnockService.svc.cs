@@ -8,7 +8,8 @@ namespace Knock
     {
         public Guid WhatIsYourToken()
         {
-            var token = new Guid("8bb8dc4c-065e-4e36-8e0c-208a0465c3f3");
+            //var token = new Guid("8bb8dc4c-065e-4e36-8e0c-208a0465c3f3");
+            var token = Guid.Empty;
 
             return token;
         }
