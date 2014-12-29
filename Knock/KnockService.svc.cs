@@ -15,7 +15,17 @@ namespace Knock
 
         public long FibonacciNumber(long n)
         {
-            throw new NotImplementedException();
+            long a = 0;
+            long b = 1;
+
+            for (long i = 0; i < n; i++)
+            {
+                var tmp = a;
+                a = b;
+                b = tmp + b;
+            }
+
+            return a;
         }
 
 
