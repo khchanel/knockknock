@@ -49,8 +49,13 @@ namespace Knock
                 return TriangleType.Equilateral;
             }
 
-            
-            return TriangleType.Error;
+            if ((a == b && b != c) || (b == c && b != a) || (a == c && a != b))
+            {
+                return TriangleType.Isosceles;
+            }
+
+
+            return TriangleType.Scalene;
         }
 
 
