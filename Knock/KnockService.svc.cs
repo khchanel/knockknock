@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Linq;
+using System.ServiceModel;
 using knockknock.readify.net;
 
 namespace Knock
@@ -20,7 +21,8 @@ namespace Knock
             const int max = 92;
             if (n > max)
             {
-                throw new ArgumentOutOfRangeException("n", "Fib(>92) will cause a 64-bit integer overflow.");
+                var ex = new ArgumentOutOfRangeException("n", "Fib(>92) will cause a 64-bit integer overflow.");
+                throw new FaultException<ArgumentOutOfRangeException>(ex, ex.Message);
             }
 
             long a = 0;
@@ -69,7 +71,8 @@ namespace Knock
         {
             if (s == null)
             {
-                throw new ArgumentNullException("s");
+                var ex = new ArgumentNullException("s");
+                throw new FaultException<ArgumentNullException>(ex, ex.Message);
             }
 
             var words = s.Split(' ');
