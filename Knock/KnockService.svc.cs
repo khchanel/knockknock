@@ -66,8 +66,25 @@ namespace Knock
 
         public string ReverseWords(string s)
         {
-            return new string(s.ToCharArray().Reverse().ToArray());
+            string[] words = s.Split(' ');
+            string result = "";
+
+            foreach (var i in words)
+            {
+                result += i.Inverse() + " ";
+            }
+
+            return result;
         }
 
     }
+
+    static class StringExtensions
+    {
+        public static string Inverse(this string input)
+        {
+            return new string(input.ToCharArray().Reverse().ToArray());
+        }
+    }
+
 }
