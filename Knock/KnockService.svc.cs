@@ -67,6 +67,11 @@ namespace Knock
 
         public string ReverseWords(string s)
         {
+            if (s == null)
+            {
+                throw new ArgumentNullException();
+            }
+
             var words = s.Split(' ');
 
             for (var i=0; i<words.Length; i++)
