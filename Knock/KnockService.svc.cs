@@ -20,7 +20,7 @@ namespace Knock
             const int max = 92;
             if (n > max)
             {
-                throw new ArgumentOutOfRangeException();
+                throw new ArgumentOutOfRangeException("n", "Fib(>92) will cause a 64-bit integer overflow.");
             }
 
             long a = 0;
