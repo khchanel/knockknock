@@ -19,7 +19,9 @@ namespace Knock
         public long FibonacciNumber(long n)
         {
             const int max = 92;
-            if (n > max)
+            long absN = Math.Abs(n);
+            
+            if (absN > max)
             {
                 var ex = new ArgumentOutOfRangeException("n", "Fib(>92) will cause a 64-bit integer overflow.");
                 throw new FaultException<ArgumentOutOfRangeException>(ex, ex.Message);
@@ -28,11 +30,16 @@ namespace Knock
             long a = 0;
             long b = 1;
 
-            for (long i = 0; i < n; i++)
+            for (long i = 0; i < absN; i++)
             {
                 var tmp = a;
                 a = b;
                 b = tmp + b;
+            }
+
+            if (n < 0 && absN%2 == 0)
+            {
+                return -a;
             }
 
             return a;
