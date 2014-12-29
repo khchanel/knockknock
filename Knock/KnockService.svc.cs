@@ -39,6 +39,17 @@ namespace Knock
 
         public TriangleType WhatShapeIsThis(int a, int b, int c)
         {
+            if (a + b <= c || b + c <= a || a + c <= b)
+            {
+                return TriangleType.Error;
+            }
+
+            if (a == b  && b == c)
+            {
+                return TriangleType.Equilateral;
+            }
+
+            
             return TriangleType.Error;
         }
 
