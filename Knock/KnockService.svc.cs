@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 using knockknock.readify.net;
 
 namespace Knock
@@ -37,7 +38,7 @@ namespace Knock
 
         public string ReverseWords(string s)
         {
-            throw new NotImplementedException();
+            return new string(s.ToCharArray().Reverse().ToArray());
         }
 
     }
