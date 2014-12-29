@@ -39,7 +39,7 @@ namespace Knock
 
         public TriangleType WhatShapeIsThis(int a, int b, int c)
         {
-            throw new NotImplementedException();
+            return TriangleType.Error;
         }
 
 
