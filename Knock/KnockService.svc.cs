@@ -46,6 +46,11 @@ namespace Knock
                 return TriangleType.Error;
             }
 
+            if (a + b <= c || b + c <= a || a + c <= b)
+            {
+                return TriangleType.Error;
+            }
+
             switch (values.Distinct().Count())
             {
                 case 1:
