@@ -17,6 +17,12 @@ namespace Knock
 
         public long FibonacciNumber(long n)
         {
+            const int max = 92;
+            if (n > max)
+            {
+                throw new ArgumentOutOfRangeException();
+            }
+
             long a = 0;
             long b = 1;
 
