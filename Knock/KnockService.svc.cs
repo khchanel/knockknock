@@ -39,23 +39,24 @@ namespace Knock
 
         public TriangleType WhatShapeIsThis(int a, int b, int c)
         {
-            if (a + b <= c || b + c <= a || a + c <= b)
+            var values = new[] { a, b, c };
+
+            if (a <= 0 || b <= 0 || c <= 0)
             {
                 return TriangleType.Error;
             }
 
-            if (a == b  && b == c)
+            switch (values.Distinct().Count())
             {
-                return TriangleType.Equilateral;
+                case 1:
+                    return TriangleType.Equilateral;
+                case 2:
+                    return TriangleType.Isosceles;
+                case 3:
+                    return TriangleType.Scalene;
+                default:
+                    return TriangleType.Error;
             }
-
-            if ((a == b && b != c) || (b == c && b != a) || (a == c && a != b))
-            {
-                return TriangleType.Isosceles;
-            }
-
-
-            return TriangleType.Scalene;
         }
 
 
