@@ -7,7 +7,9 @@ namespace Knock
     {
         public Guid WhatIsYourToken()
         {
-            throw new NotImplementedException();
+            var token = new Guid("8bb8dc4c-065e-4e36-8e0c-208a0465c3f3");
+
+            return token;
         }
 
 
