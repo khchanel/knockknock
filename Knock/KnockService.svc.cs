@@ -22,14 +22,17 @@ namespace Knock
                 throw new ArgumentOutOfRangeException("n", "Fib(>92) will cause a 64-bit integer overflow.");
             }
 
-            var sqrt5 = Math.Sqrt(5);
-            var p1 = (1 + sqrt5) / 2;
-            var p2 = -1 * (p1 - 1);
-            var n1 = Math.Pow(p1, n + 1);
-            var n2 = Math.Pow(p2, n + 1);
-            var f = (long) ((n1 - n2)/sqrt5);
+            long a = 0;
+            long b = 1;
 
-            return f;
+            for (long i = 0; i < n; i++)
+            {
+                var tmp = a;
+                a = b;
+                b = tmp + b;
+            }
+
+            return a;
         }
 
 
