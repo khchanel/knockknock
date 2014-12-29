@@ -69,7 +69,7 @@ namespace Knock
         {
             if (s == null)
             {
-                throw new ArgumentNullException();
+                throw new ArgumentNullException("s");
             }
 
             var words = s.Split(' ');
