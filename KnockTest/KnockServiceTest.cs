@@ -132,9 +132,9 @@ namespace KnockTest
         [TestMethod]
         public void WhatShapeIsThisWithScalene()
         {
-            const int a = 1;
-            const int b = 2;
-            const int c = 4;
+            const int a = 12;
+            const int b = 6;
+            const int c = 14;
             const TriangleType expected = TriangleType.Scalene;
 
             var actual = _service.WhatShapeIsThis(a, b, c);
